@@ -23,6 +23,6 @@ public class MainController {
 	@GetMapping("/test")
 	@ResponseBody
 	String gitTest() {
-		return "깃 테스트";
+		return "깃 테스트 세번째";
 	}
 }
