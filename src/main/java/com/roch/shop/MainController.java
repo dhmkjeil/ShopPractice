@@ -23,6 +23,6 @@ public class MainController {
 	@GetMapping("/gitTest")
 	@ResponseBody
 	String gitTest() {
-		return "이클립스에서 해봄";
+		return "메인에서 수정";
 	}
 }
