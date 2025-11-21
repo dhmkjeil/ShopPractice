@@ -19,10 +19,6 @@ public class MainController {
 	String about() {
 		return "연습용 웹페이지";
 	}
-	
-	@GetMapping("/gitTest")
-	@ResponseBody
-	String gitTest() {
-		return "이클립스에서 해봄";
-	}
+
+	String test = "브랜치 만들었어용"
 }
