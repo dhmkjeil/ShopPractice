@@ -20,6 +20,8 @@ public class MainController {
 		return "연습용 웹페이지";
 	}
 
-	String test = "브랜치 만들었어용";
-	String test2 = "여기는 test 브랜치에용";
+	@GetMapping("/gitTest")
+	String gitTest() {
+		return "test 브랜치에서 수정함";
+	}
 }
