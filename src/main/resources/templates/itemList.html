@@ -12,7 +12,8 @@
 		<img src="https://placehold.co/300">
 		<div>
 			<h4 th:text="${item.title}"></h4>
-			<p th:text="${item.price}"></p>
+			<a th:href="@{'/detail/' + ${item.id}}">링크</a>
+			<p th:text="${item.price + '원'}"></p>
 		</div>
 	</div>
 </body>

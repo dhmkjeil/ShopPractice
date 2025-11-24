@@ -7,11 +7,11 @@
 </head>
 <body>
 	<div th:replace="~{nav.html::navbar}"></div>
-	
-	<form action="/add" method="POST">
-		<input name="title">
-		<input name="price">
-		<button type="submit">등록</button>
-	</form>
+	<h4>에러페이지입니다.</h4>
+	<p th:text="${status}">
+	<p th:text="${error}">
+	<p th:text="${path}">
+	<p th:text="${message}">
+	<p th:text="${exception}">
 </body>
 </html>
