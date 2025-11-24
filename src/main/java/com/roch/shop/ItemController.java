@@ -16,6 +16,16 @@ public class ItemController {
 	
 	@GetMapping("/list")
 	String itemList(Model model) {
+		
+		User u = new User();
+		u.setName("김철수");
+		u.setAge(21);
+		System.out.println(u.getName());
+		System.out.println(u.getAge());
+		
+		u.addAgeOne();
+		System.out.println(u.getAge());
+		
 		List<Item> result = itemRepository.findAll();
 		model.addAttribute("items", result);
 		System.out.println(result.toString());

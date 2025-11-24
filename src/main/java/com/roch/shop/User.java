@@ -15,6 +15,8 @@ public class User {
 	}
 	
 	public void setAge(Integer age) {
-		this.age = age;
+		if (age > 0 && age < 100) {
+			this.age = age;
+		}
 	}
 }
