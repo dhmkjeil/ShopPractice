@@ -15,49 +15,30 @@ import lombok.RequiredArgsConstructor;
 @Controller
 @RequiredArgsConstructor
 public class ItemController {
-	
+
 	private final ItemRepository itemRepository;
-	
+	private final ItemService itemService;
+
 	@GetMapping("/list")
 	String itemList(Model model) {
-		
-		User u = new User();
-		u.setName("김철수");
-		u.setAge(21);
-		u.addAgeOne();
-		
-		List<Item> result = itemRepository.findAll();
-		model.addAttribute("items", result);
+		itemService.findAllItem(model);
 		return "itemList.html";
 	}
-	
+
 	@GetMapping("/write")
 	String write() {
 		return "write.html";
 	}
-	
+
 	@PostMapping("/add")
-	String addItem(@RequestParam("title") String title, @RequestParam(value="price", required=false) Integer price) {
-		if (title != "" && price != null) {
-			Item item = new Item();
-			item.setTitle(title);
-			item.setPrice(price);
-				
-			itemRepository.save(item);
-			return "redirect:/list";
-		} else {
-			return "write";
-		}
+	String addItem(@RequestParam("title") String title, @RequestParam(value = "price", required = false) String price) {
+		itemService.saveItem(title, price);
+		return "redirect:/list";
 	}
-	
+
 	@GetMapping("/detail/{id}")
-	String detail(Model model, @PathVariable("id") Long id){
-		Optional<Item> result = itemRepository.findById(id);
-		if (result.isPresent()) {
-			model.addAttribute("detail", result.get());
-			return "detail.html";
-		} else {
-			return "redirect:/list";
-		}
+	String detail(Model model, @PathVariable("id") Long id) {
+		itemService.itemDetail(model, id);
+		return "detail.html";
 	}
 }
