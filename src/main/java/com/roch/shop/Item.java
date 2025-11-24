@@ -11,7 +11,6 @@ import lombok.ToString;
 
 @Entity
 @Getter
-@Setter
 @ToString
 public class Item {
 	@Id
@@ -23,4 +22,16 @@ public class Item {
 	
 	@Column(nullable = false)
 	private Integer price;
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public void setPrice(Integer price) {
+		if (price > 0) {
+			this.price = price;
+		} else {
+			this.price = 0;
+		}
+	}
 }
