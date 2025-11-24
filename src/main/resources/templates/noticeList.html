@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:each="notice : ${notices}">
+		<h4 th:text="${notice.title}"></h4>
+		<p th:text="${notice.createDate}"></p>
+	</div>
+</body>
+</html>
