@@ -42,17 +42,12 @@ public class ItemService {
 		}
 		
 		Item item = new Item();
-		if (id == 0L) {
-			item.setTitle(title);
-			item.setPrice(Integer.parseInt(price));
-		} else {
-			Optional<Item> result = itemRepository.findById(id);
-			if (result.isPresent()) {
-				item = result.get();
-				item.setTitle(title);
-				item.setPrice(Integer.parseInt(price));
-			}
+		Optional<Item> result = itemRepository.findById(id);
+		if (result.isPresent()) {
+			item = result.get();
 		}
+		item.setTitle(title);
+		item.setPrice(Integer.parseInt(price));
 		itemRepository.save(item);
 	}
 	
@@ -64,7 +59,7 @@ public class ItemService {
 		model.addAttribute("detail", result.get());
 	}
 	
-	public void itemFix(Model model, Long id) {
+	public void itemEdit(Model model, Long id) {
 		Optional<Item> result = itemRepository.findById(id);
 		if (!result.isPresent()) {
 			throw new NoSuchElementException("해당 상품은 없습니다.");
