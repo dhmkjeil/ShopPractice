@@ -1,6 +1,4 @@
-package com.roch.shop;
-
-import java.util.List;
+package com.roch.shop.notice;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,12 +11,11 @@ import lombok.RequiredArgsConstructor;
 public class NoticeController {
 	
 	private final NoticeRepository noticeRepository;
+	private final NoticeService noticeService;
 	
 	@GetMapping("/notice")
 	String noticeList(Model model) {
-		List<Notice> notices = noticeRepository.findAll();
-		model.addAttribute("notices", notices);
-		System.out.println(notices.toString());
+		noticeService.findAllNotice(model);
 		return "noticeList.html";
 	}
 }

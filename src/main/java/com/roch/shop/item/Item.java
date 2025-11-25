@@ -1,4 +1,4 @@
-package com.roch.shop;
+package com.roch.shop.item;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

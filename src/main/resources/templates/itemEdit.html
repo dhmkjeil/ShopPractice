@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/main.css" rel="stylesheet">
+</head>
+<body>
+	<div th:replace="~{nav.html::navbar}"></div>
+	
+	<div class="detail">
+	  <h4>수정페이지</h4>
+	  <img src="https://placehold.co/300">
+	  <form action="/save" method="POST">
+	  		<input type="hidden" name="id" th:value="${item.id}">
+			<input name="title" th:text="상품명" th:value="${item.title}">
+			<input name="price" th:text="가격" th:value="${item.price}">
+		  	<p>
+		  	<button>수정</button>
+	  </form>
+	</div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.roch.shop;
+package com.roch.shop.item;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -48,3 +48,6 @@ input {
   display : block;
   margin : auto;
 }
+.detail input{
+	margin : auto;
+}

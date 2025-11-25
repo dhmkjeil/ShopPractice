@@ -1,4 +1,4 @@
-package com.roch.shop;
+package com.roch.shop.notice;
 
 import java.util.Date;
 
